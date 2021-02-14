@@ -1,0 +1,26 @@
+.navbar-fixed{
+    flex-direction: row;
+    background: #675BF1;
+    .form-inline{
+        .btn-fixed{
+            background: #675BF1;
+        }
+    }
+}
+.todo-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.todo-items{
+    width: 300px;
+    padding: 2px 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px 30px;
+}
+.form-container{
+    margin: 25px 300px;
+}
+.btn-submit{
+    margin-left: 500px;
+}
