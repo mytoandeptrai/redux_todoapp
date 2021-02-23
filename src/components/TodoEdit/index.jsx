@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Popup from "../../Popup";
 
 const TodoEdit = ({ valuesEdit, handleEditSubmit, handleDeleteTodo }) => {
   const status = valuesEdit.status;
-
+  const [currentItem, setCurrentItem] = useState('');
+  const [isDelete, setIsDelete] = useState(false);
   const [editValues, setEditValues] = useState({
     id: valuesEdit.id,
     title: "",
@@ -23,7 +25,7 @@ const TodoEdit = ({ valuesEdit, handleEditSubmit, handleDeleteTodo }) => {
       editValues.creator.trim() === "" ||
       editValues.status === ""
     ) {
-      handleDeleteTodo(editValues);
+      setCurrentItem(editValues);
     } else {
       handleEditSubmit(editValues);
 
@@ -143,7 +145,7 @@ const TodoEdit = ({ valuesEdit, handleEditSubmit, handleDeleteTodo }) => {
             <button className="btn btn-primary btn-submit" type="submit">
               Save
             </button>
-            <button className="btn btn-primary btn-submit" type="submit">
+            <button className="btn btn-primary btn-submit" type="submit" onClick={() => setIsDelete(!isDelete)}>
               Delete
             </button>
             <button
@@ -154,6 +156,7 @@ const TodoEdit = ({ valuesEdit, handleEditSubmit, handleDeleteTodo }) => {
             </button>
           </div>
         </form>
+        <Popup isDelete={isDelete} currentItem={currentItem} handleDeleteTodo={handleDeleteTodo} setIsDelete={setIsDelete} />
       </div>
     </div>
   );
