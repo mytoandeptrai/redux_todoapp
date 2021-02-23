@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-const Search = ({handleSearchSubmit}) => {
-    const [search, setSearch] = useState('');
-    const onSearchChange = e => {
-        setSearch(e.target.value)
-    }
-    const handleSubmit = e => {
-        e.preventDefault();
-        if(search === '') return;
-        handleSearchSubmit(search);
-    }
+const Search = ({ handleSearchSubmit }) => {
+  const [search, setSearch] = useState("");
+  const onSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearchSubmit(search);
+  };
   return (
     <div>
       <form className="form-inline" onSubmit={handleSubmit}>

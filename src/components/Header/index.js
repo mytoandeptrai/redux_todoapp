@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search";
-const Header = ({handleSearchSubmit}) => {
+const Header = ({ handleSearchSubmit }) => {
   return (
     <div>
       <nav className="navbar navbar-light bg-light justify-content-between navbar-fixed">
@@ -11,7 +11,7 @@ const Header = ({handleSearchSubmit}) => {
           </button>
         </div>
         <div className="navbar-search">
-          <Search handleSearchSubmit={handleSearchSubmit}/>
+          <Search handleSearchSubmit={handleSearchSubmit} />
         </div>
       </nav>
     </div>

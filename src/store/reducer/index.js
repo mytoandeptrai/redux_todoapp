@@ -6,6 +6,238 @@ const todosSlice = createSlice({
     allTodos: [
       {
         id: uuidv4(),
+        title: "Task 4",
+        creator: "Hieu",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 2",
+        creator: "Toan",
+        status: "doing",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 3",
+        creator: "Loc",
+        status: "done",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
+        title: "Task 1",
+        creator: "Loc",
+        status: "new",
+        description:
+          "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
+      },
+      {
+        id: uuidv4(),
         title: "Task 1",
         creator: "Loc",
         status: "new",
@@ -37,6 +269,7 @@ const todosSlice = createSlice({
           "This is a tasks,This is a tasks,This is a tasks,This is a tasks,This is a tasks,",
       },
     ],
+    searchTodo: []
   },
   reducers: {
     addTodo: (state, action) => {
@@ -49,10 +282,35 @@ const todosSlice = createSlice({
       });
     },
     searchTodo: (state, action) => {
-        console.log(action.payload);
-      state.allTodos = state.allTodos.filter(
-        (todo) => todo.title === action.payload || todo.creator === action.payload
+      const searchValue = state.allTodos.filter(
+        (todo) =>
+          todo.title === action.payload || todo.creator === action.payload
       );
+      state.searchTodo = searchValue;
+    },
+    editTodo: (state, action) => {
+      state.allTodos = state.allTodos.map((todo) => {
+        console.log(todo.id);
+        console.log(action.payload.id);
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            title: action.payload.title,
+            creator: action.payload.creator,
+            status: action.payload.status,
+            description: action.payload.description,
+          };
+        }else {
+          return {
+            ...todo,
+          }
+        }
+      });
+    },
+    deleteTodo: (state, action) => {
+      const todoId = action.payload.id;
+      console.log(todoId);
+      state.allTodos = state.allTodos.filter((todo) => todo.id !== todoId);
     },
   },
 });
@@ -61,12 +319,8 @@ const todosSlice = createSlice({
 const todosReducer = todosSlice.reducer;
 
 //selector
-
 export const todosSelector = (state) => state.todosReducer.allTodos;
-
 //action selector
-export const { addTodo } = todosSlice.actions;
-
-export const { searchTodo } = todosSlice.actions;
+export const { addTodo, searchTodo, editTodo, deleteTodo } = todosSlice.actions;
 //export
 export default todosReducer;

@@ -1,26 +1,50 @@
-.navbar-fixed{
+.navbar-fixed {
     flex-direction: row;
-    background: #675BF1;
-    .form-inline{
-        .btn-fixed{
-            background: #675BF1;
+    background: #675bf1;
+    .form-inline {
+        .btn-fixed {
+            background: #675bf1;
         }
     }
 }
-.todo-container{
+.todo-container {
     display: flex;
     flex-wrap: wrap;
 }
-.todo-items{
-    width: 300px;
-    padding: 2px 5px;
-    border: 1px solid black;
+.todo-items {
+    width: 250px;
+    padding: 5px 15px;
+    border: 2px solid #675bf1;
+
     border-radius: 15px;
     margin: 10px 30px;
 }
-.form-container{
+.form-container {
     margin: 25px 300px;
 }
-.btn-submit{
+.btn-submit {
     margin-left: 500px;
+}
+.pagination {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #675bf1;
+    a {
+        padding: 10px;
+        // margin: 8px;
+        border-radius: 5px;
+        border: 3px solid #675bf1;
+        cursor: pointer;
+    }
+    a:hover {
+        color: red;
+    }
+    .paginationActive a {
+        background-color: black;
+    }
 }

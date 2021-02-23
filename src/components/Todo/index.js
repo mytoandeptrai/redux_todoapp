@@ -1,28 +1,41 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Menu from "../Menu";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AllTasks from "../TodoList/AllTasks";
 import TodoList from "../TodoList/Todos";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, searchTodo, todosSelector } from "../../store/reducer";
+import { addTodo, searchTodo, todosSelector,deleteTodo, editTodo } from "../../store/reducer";
 import TodoForm from "../TodoForm";
 import Header from "../Header";
-
+import TodoEdit from "../TodoEdit";
 const Todo = () => {
+  const [valuesEdit, setValuesEdit] = useState([]);
   const todos = useSelector(todosSelector);
+  const todoSearch = useSelector(state => state.todosReducer.searchTodo)
+
+  const [isSearch, setIsSearch] = useState(false);
   const dispatch = useDispatch();
   const handleFormSubmit = (tasksValue) => {
     console.log(tasksValue);
     dispatch(addTodo(tasksValue));
   };
   const handleSearchSubmit = (searchValues) => {
-    const newTodos = todos.filter((x) =>
-      x.title.toLowerCase().match(searchValues.toLowerCase())
-    );
-    const newTodo = newTodos.map((el) => el.title).join();
-    console.log(newTodo);
-    dispatch(searchTodo(newTodo));
+    searchValues ? setIsSearch(true) : setIsSearch(false);
+    dispatch(searchTodo(searchValues));
   };
+  const TodoEditMoving = (values) => {
+    console.log(values);
+    setValuesEdit(values);
+  };
+  const handleEditSubmit = editValues => {
+    console.log(editValues);
+    dispatch(editTodo(editValues));
+  }
+  const handleDeleteTodo = todoValues => {
+    console.log(todoValues);
+    dispatch(deleteTodo(todoValues))
+  }
+  
   return (
     <Fragment>
       <div className="container-fluid">
@@ -37,7 +50,7 @@ const Todo = () => {
                 <Fragment>
                   <div className="col-9">
                     <Route exact path="/">
-                      <AllTasks todos={todos} />
+                      <AllTasks todos={isSearch ? todoSearch : todos} TodoEditMoving={TodoEditMoving} />
                     </Route>
                     <Route path="/newTasks">
                       <TodoList todos={todos} status="new" />
@@ -50,6 +63,9 @@ const Todo = () => {
                     </Route>
                     <Route path="/todoForms">
                       <TodoForm handleFormSubmit={handleFormSubmit} />
+                    </Route>
+                    <Route path="/todoEdit">
+                      <TodoEdit handleEditSubmit={handleEditSubmit} handleDeleteTodo={handleDeleteTodo} valuesEdit={valuesEdit} />
                     </Route>
                   </div>
                 </Fragment>

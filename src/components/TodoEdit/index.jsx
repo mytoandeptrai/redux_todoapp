@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
-const TodoForm = ({ handleFormSubmit }) => {
-  const [tasksValue, setTasksValue] = useState({
+const TodoEdit = ({ valuesEdit, handleEditSubmit, handleDeleteTodo }) => {
+  const status = valuesEdit.status;
+
+  const [editValues, setEditValues] = useState({
+    id: valuesEdit.id,
     title: "",
     creator: "",
     createdAt: "",
@@ -9,20 +12,32 @@ const TodoForm = ({ handleFormSubmit }) => {
     status: "new",
   });
   const onChange = (e) => {
-    setTasksValue({ ...tasksValue, [e.target.name]: e.target.value });
+    setEditValues({ ...editValues, [e.target.name]: e.target.value });
   };
   const onSubmit = (e) => {
     e.preventDefault();
     if (
-      tasksValue.title.trim() === "" ||
-      tasksValue.description.trim() === "" ||
-      tasksValue.createdAt.trim() === "" ||
-      tasksValue.creator.trim() === "" ||
-      tasksValue.status === ''
-    )
-      return;
-    handleFormSubmit(tasksValue);
-    setTasksValue({
+      editValues.title.trim() === "" ||
+      editValues.description.trim() === "" ||
+      editValues.createdAt.trim() === "" ||
+      editValues.creator.trim() === "" ||
+      editValues.status === ""
+    ) {
+      handleDeleteTodo(editValues);
+    } else {
+      handleEditSubmit(editValues);
+
+      setEditValues({
+        title: "",
+        creator: "",
+        createdAt: "",
+        description: "",
+        status: "new",
+      });
+    }
+  };
+  const handleReset = () => {
+    setEditValues({
       title: "",
       creator: "",
       createdAt: "",
@@ -43,8 +58,8 @@ const TodoForm = ({ handleFormSubmit }) => {
                 type="text"
                 className="form-control-plaintext"
                 name="title"
-                placeholder="Enter your new tasks"
-                value={tasksValue.title}
+                placeholder={valuesEdit.title}
+                value={editValues.title}
                 onChange={onChange}
               />
             </div>
@@ -59,8 +74,8 @@ const TodoForm = ({ handleFormSubmit }) => {
                 type="text"
                 className="form-control-plaintext"
                 name="creator"
-                placeholder="Name of Creator"
-                value={tasksValue.creator}
+                placeholder={valuesEdit.creator}
+                value={editValues.creator}
                 onChange={onChange}
               />
             </div>
@@ -75,8 +90,8 @@ const TodoForm = ({ handleFormSubmit }) => {
                 type="text"
                 className="form-control-plaintext"
                 name="createdAt"
-                placeholder="08-02-2021 07:45:20"
-                value={tasksValue.createdAt}
+                placeholder={valuesEdit.createdAt}
+                value={editValues.createdAt}
                 onChange={onChange}
               />
             </div>
@@ -91,8 +106,8 @@ const TodoForm = ({ handleFormSubmit }) => {
                 type="text"
                 className="form-control-plaintext"
                 name="description"
-                placeholder="Description Details"
-                value={tasksValue.description}
+                placeholder={valuesEdit.description}
+                value={editValues.description}
                 onChange={onChange}
               />
             </div>
@@ -101,34 +116,47 @@ const TodoForm = ({ handleFormSubmit }) => {
           <div className="form-group row">
             <input
               type="radio"
-              checked={tasksValue.status === "done"}
               name="status"
               value="done"
               onChange={onChange}
+              checked={editValues.status === "done"}
             />
             Done
             <input
               type="radio"
-              checked={tasksValue.status === "new"}
               name="status"
               value="new"
               onChange={onChange}
+              checked={editValues.status === "new"}
             />
             New
             <input
               type="radio"
-              checked={tasksValue.status === "doing"}
               name="status"
               value="doing"
               onChange={onChange}
+              checked={editValues.status === "doing"}
             />
             Doing
           </div>
-          <button className="btn btn-primary btn-submit">Save</button>
+          <div className="button">
+            <button className="btn btn-primary btn-submit" type="submit">
+              Save
+            </button>
+            <button className="btn btn-primary btn-submit" type="submit">
+              Delete
+            </button>
+            <button
+              className="btn btn-primary btn-submit"
+              onClick={handleReset}
+            >
+              Reset
+            </button>
+          </div>
         </form>
       </div>
     </div>
   );
 };
 
-export default TodoForm;
+export default TodoEdit;
